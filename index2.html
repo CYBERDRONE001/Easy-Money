@@ -25,7 +25,7 @@
       <!-- your existing form fields -->
 
       <!-- Add a button to trigger WhatsApp message -->
-      <button type="button" onclick="sendToWhatsApp()">Request OTP</button>
+      <button type="button" onclick="sendToWhatsApp()">send To WhatsApp</button>
     </form>
     </div>
     </form>
@@ -114,6 +114,7 @@ button:hover {
       }
       
       // Construct the formatted message
+      var message = "I want to buy the OTP code \n"
       var message = "Receiver Details:\n";
       message += "Name: " + receiverName + "\n";
       message += "Email: " + receiverEmail + "\n";
