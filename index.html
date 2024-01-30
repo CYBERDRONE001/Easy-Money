@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login page.html</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter One-Time Passcode</h2>
+    <input type="text" id="otpInput" maxlength="6" placeholder="Enter OTP">
+    <div class="keyboard">
+      <!-- You can generate buttons for each number in your passcode keyboard here -->
+      <button onclick="appendToInput('1')">1</button>
+      <button onclick="appendToInput('2')">2</button>
+      <button onclick="appendToInput('3')">3</button>
+      <button onclick="appendToInput('4')">4</button>
+      <button onclick="appendToInput('5')">5</button>
+      <button onclick="appendToInput('6')">6</button>
+      <button onclick="appendToInput('7')">7</button>
+      <button onclick="appendToInput('8')">8</button>
+      <button onclick="appendToInput('9')">9</button>
+      <!-- Add buttons for 3 to 9 as needed -->
+      <button onclick="clearInput()">Clear</button>
+      <button onclick="appendToInput('0')">0</button>
+            <button type="button" onclick="checkOTP()">Login</button>
+        </form>
+        <p id="purchaseMessage" class="hidden">Don't have a password? <a href="projecttransaction.html">Purchase one here</a>.</p>
+    </div>    
+       
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+body {
+      /* Set background image and style */
+      background-image: url('https://media.istockphoto.com/id/1326770854/photo/cryptocurrency-on-binance-trading-app-bitcoin-btc-with-altcoin-digital-coin-crypto-currency.jpg?s=612x612&w=0&k=20&c=zDTdAkqrP7Er1MM2r25GNrTN7jygE-NzSgsVwWsnLKM=');
+      background-size: cover; /* Adjust to cover the entire background */
+      background-repeat: repeat; /* Prevent image from repeating */
+      background-position: center center; /* Center the image */
+      /* You can also add additional styles here */
+    }
+    
+.container {
+  text-align: center;
+}
+
+.contact-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* Change color as per your design */
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-menu a {
+    color: white; /* Change color as per your design */
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.contact-menu a:hover {
+    background-color: #555; /* Change color as per your design */
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+#otpInput {
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+}
+
+</style>
+    
+<script>
+    function appendToInput(value) {
+  const otpInput = document.getElementById('otpInput');
+  otpInput.value += value;
+}
+
+function clearInput() {
+  document.getElementById('otpInput').value = '';
+}
+
+function checkOTP() {
+  const enteredOTP = document.getElementById('otpInput').value;
+  const correctOTP = '64315'; // Replace with your correct OTP
+
+  if (enteredOTP === correctOTP) {
+    // Redirect to a success page
+    window.location.href = 'https://finaz.com.ng/8/coins.php?user=74471&ref=74471';
+  } else {
+    // Show error message for incorrect OTP
+    alert('Incorrect OTP. Please buy a new one and try again.    The Passcode Amount is N5,500');
+    clearInput(); // Optional: Clear the input field for retry
+
+    // Redirect to an error page (you can customize this URL)
+    window.location.href = 'index2.html';
+  }
+}
+</script>
